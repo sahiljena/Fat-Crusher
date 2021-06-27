@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title%} login {% endblock%}
+{% block cssfile %} <link rel="stylesheet" href="{{ url_for('static',filename='css/udtprofile.css') }}"> {% endblock %}
+{% block body %}
+  <main>
+    <div class="form-box">
+      <h2>Add some details to your profile</h2>
+      <br>
+      <div class="input-box">
+        <input class="cus-input" type="tel" placeholder="Full Name" required>
+      </div>
+      <br>
+      <div class="input-box">
+        <input class="cus-input" type="email" placeholder="E-mail" required>
+      </div>
+      <br>
+      <div class="input-box">
+        <input class="cus-input" type="number" placeholder="Age" required>
+      </div>
+      <br>
+      <div class="input-box">
+        <select class="cus-input" id="cars" name="cars">
+          <option value="volvo" selected>ID Proof</option>
+          <option value="saab">Aadhar Card</option>
+          <option value="fiat">Pan Card</option>
+          <option value="audi">Driver's liscence</option>
+        </select>
+      </div>
+      <br>
+    <div class="input-box">
+      <p style="color: #FFF;">Upload Image</p>
+      <p style="color: #FFF;">Upload ID</p>
+    </div>
+    <div class="input-box">
+    <input class="cus-input" type="file" id="img" name="img" accept="image/*"><br>
+    <input style="margin-left: 10px;" class="cus-input" type="file" id="img" name="img" accept="image/*">
+    </div>
+      <br>
+      <center><button onclick="window.location.href='/profile'" class="sbmt-btn" style="width: 100%;">Upadate</button></center>
+      <br> <br>
+      <center><a href="">Help</a> <a href="">Contact</a></center>
+    </div>
+  </main>
+  {% endblock%}
