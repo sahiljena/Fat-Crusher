@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title%} login {% endblock%}
+{% block cssfile %} <link rel="stylesheet" href="{{ url_for('static',filename='css/login.css') }}"> {% endblock %}
+{% block body %}
+
+  <main>
+    <div class="form-box">
+      <h2>gives us your mobile number</h2>
+      <br>
+      <div class="input-box">
+        <input id="mobnum" class="mob-input" type="tel" placeholder="Mobile Number">
+      </div>
+      <br>
+      <button onclick="window.location.href='/verify'" class="sbmt-btn" style="width: 100%;">Send OTP</button>
+      <br> <br>
+      <center><a href="">Help</a> <a href="">Contact</a></center>
+    </div>
+  </main>
+  <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+  <script>
+    function sendotp()
+    {
+      var mobnum = document.getElementById("mobnum").value;
+      $.ajax({
+      type:'POST',
+      url:'/api/sendotp?mobnum='+mobnum,
+      success: function(msg){
+        alert('wow' + msg);
+      }
+      });
+    }
+  </script>
+  {% endblock%}
