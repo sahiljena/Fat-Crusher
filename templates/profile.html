@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title%} {{ username }}'s profile {% endblock%}
+{% block cssfile %} <link rel="stylesheet" href="{{ url_for('static',filename='css/profile.css') }}"> {% endblock %}
+{% block body %}
+  <main>
+  <div class="main-card">
+    <div class="user-image-qr">
+      <img src="https://preview.keenthemes.com/metronic-v4/theme/assets/pages/media/profile/profile_user.jpg" class="user-image">
+      <img src="https://i.ibb.co/RzPMxS5/qrcode.png" class="user-qr">
+    </div>
+    <div class="user-info">
+      <div class="user-name">
+        {{ username }}
+      </div>
+      <div class="user-mobile">{{ mobnum }}</div>
+          <br>
+      <div class="user-id-number">{{ userid }}</div>
+      <br>
+  
+      <div class="user-limit">{{ limit }}</div>
+    </div>
+  </div><br>
+  <center>
+    <button class="block-btn">Download</button>
+        <br>
+    <div class="bottom-nav">
+        <a href="">Profile</a>
+        <a href="">Help</a>
+        <a href="">Contact</a>
+    </div>
+    </center>
+  </main>
+  {% endblock %}
